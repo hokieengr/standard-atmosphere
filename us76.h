@@ -24,4 +24,33 @@
  * SOFTWARE.
  */
 
+#define STDATMO_SUCCESS            0
+#define STDATMO_ERROR_ALT_RANGE   -1
+
+/* Naming convention: atmo_(model name)_(function name)_(eng | met) */
+
+
+/* Compute the properties of the 1976 standard atmosphere to 86 km.
+ *
+ * Inputs:
+ *   alt       Geometric altitude, km
+ *
+ * Outputs:
+ *   sigma     density/sea-level standard density
+ *   delta     pressure/sea-level standard pressure
+ *   theta     temperature/sea-level standard temperature
+ *
+ * Originial FORTRAN 90 code by Ralph Carmichael and part of Public Domain 
+ * Aeronautical Software.
+ *
+ * http://www.pdas.com/programs/atmos.f90
+ */
+int atmo_us76_ratios_met(double alt, double* sigma, double* delta, double* theta);
+
+
+
+/* TODO: add this */
+/*int atmo_us76_ratios_eng(double alt, double* sigma, double* delta, double* theta); */
+
+
 #endif
